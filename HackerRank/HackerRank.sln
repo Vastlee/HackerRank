@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forming a Magic Square", "Forming a Magic Square\Forming a Magic Square.csproj", "{1ADFA1F0-CD08-4B2E-9EE6-9984DF45370B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Counting Valleys", "Counting Valleys\Counting Valleys.csproj", "{903C5A3E-6F9A-43F8-9DFE-14B8854D6AC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Counting Valleys", "Counting Valleys\Counting Valleys.csproj", "{903C5A3E-6F9A-43F8-9DFE-14B8854D6AC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solve Me First", "Solve Me First\Solve Me First.csproj", "{A580ECA7-64F8-4DD3-BCC5-924B51213E97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{903C5A3E-6F9A-43F8-9DFE-14B8854D6AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{903C5A3E-6F9A-43F8-9DFE-14B8854D6AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{903C5A3E-6F9A-43F8-9DFE-14B8854D6AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A580ECA7-64F8-4DD3-BCC5-924B51213E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A580ECA7-64F8-4DD3-BCC5-924B51213E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A580ECA7-64F8-4DD3-BCC5-924B51213E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A580ECA7-64F8-4DD3-BCC5-924B51213E97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

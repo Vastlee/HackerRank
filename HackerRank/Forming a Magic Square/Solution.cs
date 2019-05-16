@@ -1,41 +1,99 @@
 ﻿using System;
 using System.IO;
 
-class Solution {
-  #region Class Methods
-  private static int formingMagicSquare(int[][] s) {
-    int result = -1;
+namespace Forming_A_Magic_Square {
+  internal static class Solution {
+    private static readonly MagicSquare[] possibleSquares = new MagicSquare[] {
+      new MagicSquare(new int[][] {
+        new int[] { 8, 1, 6 },
+        new int[] { 3, 5, 7 },
+        new int[] { 4, 9, 2 }
+        }),
+      new MagicSquare(new int[][] {
+        new int[] { 6, 1, 8 },
+        new int[] { 7, 5, 3 },
+        new int[] { 2, 9, 4 }
+        }),
+      new MagicSquare(new int[][] {
+        new int[] { 4, 9, 2 },
+        new int[] { 3, 5, 7 },
+        new int[] { 8, 1, 6 }
+        }),
+      new MagicSquare(new int[][] {
+        new int[] { 2, 9, 4 },
+        new int[] { 7, 5, 3 },
+        new int[] { 6, 1, 8 }
+        }),
+      new MagicSquare(new int[][] {
+        new int[] { 8, 3, 4 },
+        new int[] { 1, 5, 9 },
+        new int[] { 6, 7, 2 }
+        }),
+      new MagicSquare(new int[][] {
+        new int[] { 4, 3, 8 },
+        new int[] { 9, 5, 1 },
+        new int[] { 2, 7, 6 }
+        }),
+      new MagicSquare(new int[][] {
+        new int[] { 6, 7, 2 },
+        new int[] { 1, 5, 9 },
+        new int[] { 8, 3, 4 }
+        }),
+      new MagicSquare(new int[][] {
+        new int[] { 2, 7, 6 },
+        new int[] { 9, 5, 1 },
+        new int[] { 4, 3, 8 }
+        })
+      };
 
-    return result;
-  }
+    #region Class Methods
+    private static int FormingMagicSquare(int[][] s) {
+      int leastChanged = int.MaxValue;
+      int changesNeeded;
 
-  private static int FindCommonSum(int[][] s) {
-    int result = -1;
-    int[] sums = new int[3];
-    for(int i = 0; i < 3; i++) {
+      foreach(MagicSquare possible in Solution.possibleSquares) {
+        changesNeeded = 0;
+        for(int i = 0; i < possible.Square.Length; i++) {
+          for(int i2 = 0; i2 < possible.Square[i].Length; i2++) {
+            if(possible.Square[i][i2] != s[i][i2]) {
+              changesNeeded += Math.Abs(possible.Square[i][i2] - s[i][i2]);
+            }
+          }
+        }
 
+        if(changesNeeded < leastChanged) {
+          leastChanged = changesNeeded;
+        }
+
+      }
+      return leastChanged;
     }
-    return result;
-  }
 
-  #endregion
+    #endregion Class Methods
 
-  #region Main
-  static void Main(string[] args) {
-    TextWriter textWriter = new StreamWriter(Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+    #region Structs
+    internal struct MagicSquare {
+      public int[][] Square { get; }
 
-    int[][] s = new int[3][];
-
-    for(int i = 0; i < 3; i++) {
-      s[i] = Array.ConvertAll(Console.ReadLine().Split(' '), sTemp => Convert.ToInt32(sTemp));
+      internal MagicSquare(int[][] square) => Square = square;
     }
+    #endregion
 
-    int result = formingMagicSquare(s);
+    #region Main
+    private static void Main(string[] args) {
+      TextWriter textWriter = new StreamWriter(Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
-    textWriter.WriteLine(result);
+      int[][] s = new int[3][];
+      for(int i = 0; i < 3; i++) {
+        s[i] = Array.ConvertAll(Console.ReadLine().Split(' '), sTemp => Convert.ToInt32(sTemp));
+      }
 
-    textWriter.Flush();
-    textWriter.Close();
+      int result = FormingMagicSquare(s);
+
+      textWriter.WriteLine(result);
+      textWriter.Flush();
+      textWriter.Close();
+    }
+    #endregion Main
   }
-  #endregion
 }

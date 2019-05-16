@@ -2,8 +2,10 @@
 using System.IO;
 
 namespace Counting_Valleys {
+
   internal static class Solution {
-    static int countingValleys(int n, string s) {
+
+    private static int countingValleys(int n, string s) {
       int level = 0;
       int stepDir;
       int valleyCount = 0;
@@ -19,7 +21,7 @@ namespace Counting_Valleys {
       return valleyCount;
     }
 
-    static void Main(string[] args) {
+    private static void Main(string[] args) {
       TextWriter textWriter = new StreamWriter(@Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
       int n = Convert.ToInt32(Console.ReadLine());
