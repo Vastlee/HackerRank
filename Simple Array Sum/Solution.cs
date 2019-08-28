@@ -2,7 +2,6 @@
 
 namespace Simple_Array_Sum {
   internal static class Solution {
-
     private static int SimpleArraySum(int[] ar) {
       int result = 0;
       foreach(int e in ar) {

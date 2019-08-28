@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Birthday_Cake_Candles {
   internal static class Solution {
-    static int BirthdayCakeCandles(int[] ar) {
+    private static int BirthdayCakeCandles(int[] ar) {
       int heighest = -1;
       int count = 0;
 
@@ -17,7 +17,7 @@ namespace Birthday_Cake_Candles {
       return count;
     }
 
-    static void Main(string[] args) {
+    private static void Main(string[] args) {
       TextWriter textWriter = new StreamWriter(Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
       int arCount = Convert.ToInt32(Console.ReadLine());
       int[] ar = Array.ConvertAll(Console.ReadLine().Split(' '), arTemp => Convert.ToInt32(arTemp));

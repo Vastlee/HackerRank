@@ -3,6 +3,7 @@ using System.IO;
 
 namespace Forming_A_Magic_Square {
   internal static class Solution {
+
     private static readonly MagicSquare[] possibleSquares = new MagicSquare[] {
       new MagicSquare(new int[][] {
         new int[] { 8, 1, 6 },
@@ -64,7 +65,6 @@ namespace Forming_A_Magic_Square {
         if(changesNeeded < leastChanged) {
           leastChanged = changesNeeded;
         }
-
       }
       return leastChanged;
     }
@@ -72,12 +72,14 @@ namespace Forming_A_Magic_Square {
     #endregion Class Methods
 
     #region Structs
+
     internal struct MagicSquare {
       public int[][] Square { get; }
 
       internal MagicSquare(int[][] square) => Square = square;
     }
-    #endregion
+
+    #endregion Structs
 
     #region Main
     private static void Main(string[] args) {
@@ -94,6 +96,7 @@ namespace Forming_A_Magic_Square {
       textWriter.Flush();
       textWriter.Close();
     }
+
     #endregion Main
   }
 }

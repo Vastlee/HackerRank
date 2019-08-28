@@ -2,9 +2,7 @@
 using System.IO;
 
 namespace Counting_Valleys {
-
   internal static class Solution {
-
     private static int countingValleys(int n, string s) {
       int level = 0;
       int stepDir;
